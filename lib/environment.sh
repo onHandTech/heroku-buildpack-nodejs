@@ -25,6 +25,12 @@ create_default_env() {
   export NODE_MODULES_CACHE=${NODE_MODULES_CACHE:-true}
   export NODE_ENV=${NODE_ENV:-production}
   export NODE_VERBOSE=${NODE_VERBOSE:-false}
+  export BUILD_ENV=${$BUILD_ENV}
+  export FIREBASE_API_KEY=${$FIREBASE_API_KEY}
+  export MAP_BOX_KEY=${$MAP_BOX_KEY}
+
+  printenv $BUILD_ENV
+  printenv $FIREBASE_API_KEY
 
   if $YARN; then
     export USE_YARN_CACHE=${USE_YARN_CACHE:-true}
