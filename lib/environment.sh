@@ -74,8 +74,7 @@ export_env_dir() {
     for e in *; do
       [ -e "$e" ] || continue
       echo "$e" | grep -E "$whitelist_regex" | grep -qvE "$blacklist_regex" &&
-      export "$e=$(cat "$e")" &&
-      echo "$e=$(cat "$e")"
+      export "$e=$(cat "$e")"
       :
     done
     # shellcheck disable=SC2164
