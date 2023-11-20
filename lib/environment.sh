@@ -67,7 +67,7 @@ list_node_config() {
 export_env_dir() {
   local env_dir=$1
   if [ -d "$env_dir" ]; then
-    local whitelist_regex=${2:-'^(BUILD_ENV|FIREBASE_API_KEY|MAP_BOX_KEY|IS_PREVIEW_LINK|ONHAND_TOOLKIT_NPM_TOKEN)$'}
+    local whitelist_regex=${2:-'^(BUILD_ENV|FIREBASE_API_KEY|MAP_BOX_KEY|IS_PREVIEW_LINK|ONHAND_TOOLKIT_NPM_TOKEN|PACKAGE_VERSION)$'}
     local blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH|LANG|BUILD_DIR)$'}
     # shellcheck disable=SC2164
     pushd "$env_dir" >/dev/null
